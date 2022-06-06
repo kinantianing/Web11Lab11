@@ -6,13 +6,23 @@
 **Matkul  : Pemrograman Web** <br>
 
 # Belajar PHP Framework (Codeigneter)
-1. Konfigurasi Webserver
-Konfigurasi pada webserver dengan mengaktifkan beberapa ekstensi, mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian Apache klik Config -> PHP.ini. Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server.
+1. Konfigurasi Webserver dengan mengaktifkan beberapa ekstensi, mengaktifkan ekstentsi tersebut, melalu XAMPP Control Panel, pada bagian Apache klik Config -> PHP.ini. Pada bagian extention, hilangkan tanda ; (titik koma) pada ekstensi yang akan diaktifkan. Kemudian simpan kembali filenya dan restart Apache web server seperti dibawah ini : <br>
+![Gambar 1](screenshot/ss1.PNG) <br>
 
-2. Instalasi Codeigneter 
-Install codeigneter 4 dari website https://codeigniter.com/download.
+2. Instalasi Codeigneter 4 dari website https://codeigniter.com/download.
 Extrak file zip Codeigniter ke direktori htdocs/lab11ci.
-Ubah nama direktory menjadi ci4.
+Ubah nama direktory menjadi ci4. Buka browser dengan alamat http://localhost/lab11_ci/ci4/public/
+
+3. Menjalankan CLI (Command Line Interface). Untuk mengakses CLI buka terminal/command prompt. Seperti dibawah ini : <br>
+![Gambar 2](screenshot/ss2.PNG) <br>
+
+4. Mengaktifkan Mode Debugging untuk mengetahui pesan error apabila terjadi kesalahan dalam membuat kode program. Untuk memudahkan mengetahui jenis errornya, maka perlu diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable CI_ENVIRONMENT menjadi development. Ubah nama file env menjadi .env kemudian buka file tersebut dan ubah nilai variable CI_ENVIRINMENT menjadi development.
+![Gambar 3](screenshot/ss3.PNG) <br>
+
+Contoh error yang terjadi apabila mengubah kode pada file 
+app/Controller/Home.php hilangkan titik koma pada akhir kode.
+
+
 
 ## A. Modularisasi Program
 ### 1. Membuat File Header Php
