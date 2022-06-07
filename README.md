@@ -398,7 +398,7 @@ Buatlah folder baru dengan nama `template` yang disimpan pada folder `app/Views`
 <br>
 
 Setelah halaman direfresh maka akan menjadi seperti dibawah ini : <br>
-![Gambar 7](screenshot/7.PNG) <br>
+![Gambar 8](screenshot/8.PNG) <br>
 
 
 
