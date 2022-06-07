@@ -400,5 +400,228 @@ Buatlah folder baru dengan nama `template` yang disimpan pada folder `app/Views`
 Setelah halaman direfresh maka akan menjadi seperti dibawah ini : <br>
 ![Gambar 8](screenshot/8.PNG) <br>
 
+## B. Pertanyaan dan Tugas
+Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga 
+semua link pada navigasi header dapat menampilkan tampilan dengan layout yang 
+sama. <br>
+
+
+### 1. Membuat Controllers Page
+Tambahkan controllers untuk contact dan artikel pada file `Page.php` yang terletak pada `app/Controllers/Page.php` lalu isi dengan sintaks seperti contoh dibawah ini : <br>
+```
+<?php
+
+namespace App\Controllers;
+
+class Page extends BaseController
+{
+    public function about()
+    {
+        return view('about', [
+            'title' => 'Halaman About', 
+            'content' => 'Ini adalah paragraf yang menjelaskan tentang halaman about.'
+        ]);
+    }
+
+    public function artikel()
+    {
+        return view('artikel', [
+            'title' => 'Halaman Artikel', 
+            'content' => 'Ini adalah paragraf yang menjelaskan tentang halaman artikel.'
+        ]);
+    }
+
+    public function contact()
+    {
+        return view('contact', [
+            'title' => 'Halaman Contact', 
+            'content' => 'Ini adalah paragraf yang menjelaskan tentang halaman contact.'
+        ]);
+    }
+
+    public function faqs()
+    {
+        echo "Ini adalah halaman Faqs";
+    }
+
+    public function tos()
+    {
+        echo "Ini adalah Terms of Services";
+    }
+}
+```
+<br>
+
+### 2. Membuat Controllers Home
+Mengubah sintaks pada file `Home.php` yang terletak pada `app/Controllers/Home.php` lalu isi dengan sintaks seperti contoh dibawah ini : <br>
+```
+<?php
+
+namespace App\Controllers;
+
+class Home extends BaseController
+{
+    public function home()
+    {
+        return view('home', [
+            'title' => 'Halaman Home', 
+            'content' => 'Ini adalah paragraf yang menjelaskan tentang halaman home.'
+        ]);
+    }
+}
+```
+<br>
+
+### 3. Membuat File Artikel
+Buatlah file PHP baru dengan nama `artikel.php` yang disimpan pada folder `app/Views`, lalu isi dengan sintaks seperti contoh dibawah ini : <br>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+</head>
+<body>
+    <?= $this->include('template/header'); ?>
+
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+
+    <?= $this->include('template/footer'); ?>
+</body>
+</html>    
+```
+<br>
+
+### 4. Membuat File Contact
+Buatlah file PHP baru dengan nama `contact.php` yang disimpan pada folder `app/Views`, lalu isi dengan sintaks seperti contoh dibawah ini : <br>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+</head>
+<body>
+    <?= $this->include('template/header'); ?>
+
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+
+    <?= $this->include('template/footer'); ?>
+</body>
+</html>    
+```
+<br>
+
+### 5. Membuat File Home
+Buatlah file PHP baru dengan nama `home.php` yang terletak pada folder `app/Views`, lalu isi dengan sintaks seperti contoh dibawah ini : <br>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+</head>
+<body>
+    <?= $this->include('template/header'); ?>
+
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+
+    <?= $this->include('template/footer'); ?>
+</body>
+</html>    
+```
+<br>
+
+### 6. Membuat isi Footer
+Menambahkan footer pada file `footer.php` yang diterletak pada folder `app/Views/template`, tambahkan sintaks pada awal footer yang sebelumnya telah dibuat, dengan sintaks seperti contoh dibawah ini : <br>
+```
+                <div class="row">
+                    <div class="box">
+                        <img src="https://dummyimage.com/120/e9967a/fff.png" alt="" class="image-circle">
+                        <h3>Heading</h3>
+                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis 
+                            euismod.</p>
+                        <a href="#" class="btn btn-default">View Detail</a>
+                    </div>
+                    <div class="box">
+                        <img src="https://dummyimage.com/120/98b3cd/fff.png" alt="" class="image-circle">
+                        <h3>Heading</h3>
+                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis 
+                            euismod.</p>
+                        <a href="#" class="btn btn-default">View Detail</a>
+                    </div>
+                    <div class="box">
+                        <img src="https://dummyimage.com/120/dddd88/fff.png"  alt="" class="image-circle">
+                        <h3>Heading</h3>
+                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis 
+                            euismod.</p>
+                        <a href="#" class="btn btn-default">View Detail</a>
+                    </div> 
+                </div>
+                <hr class="divider">
+                    <article class="entry">
+                        <h2>First Featurette Heading</h2>
+                        <img src="https://dummyimage.com/150/94d194/fff.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem 
+                            elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, 
+                            vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc 
+                            pretium ac.</p>
+                    </article>
+                <hr class="divider">
+                    <article class="entry">
+                        <h2>First Featurette Heading</h2>
+                        <img src="https://dummyimage.com/150/94d194/fff.png" alt="" class="right-img">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem 
+                            elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, 
+                            vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc 
+                            pretium ac.</p>
+                    </article>  
+```
+<br>
+
+### 7. Mengubah Nav pada Header
+Mengubah link home pada nav yang terdapat pada file `header.php` yang terletak pada folder `app/Views/template`, dengan sintaks seperti contoh dibawah ini : <br>
+```
+    <nav>
+        <a href="<?= base_url('/home');?>" class="active">Home</a>
+        <a href="<?= base_url('/artikel');?>">Artikel</a>
+        <a href="<?= base_url('/about');?>">About</a>
+        <a href="<?= base_url('/contact');?>">Contact</a>      
+    </nav>   
+```
+<br>
+
+### 8. Menambahkan Router
+Menambahkan router pada file `router.php` yang terletak pada folder `app/Config`, dengan sintaks seperti contoh dibawah ini : <br>
+```
+$routes->get('/', 'Home::home');
+$routes->get('/home', 'Home::home');
+$routes->get('/artikel', 'Page::artikel');
+```
+<br>
+
+Setelah halaman direfresh maka halaman utama akan menjadi seperti dibawah ini : <br>
+Halaman utama dan halaman home apabila diklik akan menampilkan tampilan yang sama. <br>
+![Gambar 9](screenshot/9.PNG) <br>
+
+Halaman artikel apabila diklik akan menampilkan tampilan seperti dibawah in. <br>
+![Gambar 10](screenshot/10.PNG) <br>
+
+Halaman about apabila diklik akan menampilkan tampilan seperti dibawah in. <br>
+![Gambar 11](screenshot/11.PNG) <br>
+
+Halaman contact apabila diklik akan menampilkan tampilan seperti dibawah in. <br>
+![Gambar 12](screenshot/12.PNG) <br>
+
+
+
+
+
 
 
